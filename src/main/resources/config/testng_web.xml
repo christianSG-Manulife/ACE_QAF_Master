@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Demo Suite" verbose="0" parallel="false"
+	thread-count="100">
+	<!-- To Do: Provide Driver Name (e.g. chromeDriver)-->
+	<parameter name="driver.name" value="chromeDriver" />
+	<!-- To Do: Driver Path -->
+	<parameter name="webdriver.chrome.driver" value="src/main/resources/drivers/chromedriver.exe" />
+	<!-- To Do: Env Based Variable -->
+	<parameter name="env.baseurl" value="www.google.com" />
+	<!-- Actual Configuration per Test Suite -->
+	<test name="Google Search" enabled="true" thread-count="10">
+		<parameter name="env.resources" value="src/main/resources/web"></parameter>
+		<groups>
+			<run>
+				<include name="@Web_Testing"/>
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+</suite>

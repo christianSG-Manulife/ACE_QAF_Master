@@ -1,0 +1,2 @@
+search.text.box = {\"locator\":\"name=q"}
+search.button={\"locator\":\"xpath=//div[3]/center/input[1]"}
